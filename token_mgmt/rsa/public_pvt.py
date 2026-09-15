@@ -1,3 +1,9 @@
+"""Demo of public-key client authentication.
+
+The client signs a payload with its private key and the mock server verifies
+that signature against the public key registered for the user.
+"""
+
 import base64
 import json
 from cryptography.hazmat.primitives import hashes, serialization
