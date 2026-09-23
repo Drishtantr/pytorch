@@ -26,6 +26,7 @@ def verify_token(token: str):
     return False
 
 
-# Example usage
-token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWxpY2UiLCJleHAiOjE3NTg3NTg1NDB9.h68jIp36dDter6pj6PIuDQpt-V7T5whdoONozg91F5M"
-verify_token(token)  # Should return True
+if __name__ == "__main__":
+    # Example usage; this sample token is long expired, so it reports as invalid.
+    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWxpY2UiLCJleHAiOjE3NTg3NTg1NDB9.h68jIp36dDter6pj6PIuDQpt-V7T5whdoONozg91F5M"
+    verify_token(token)
