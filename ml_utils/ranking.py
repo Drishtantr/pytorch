@@ -18,4 +18,6 @@ def top_k(scores: list[float], k: int) -> list[tuple[int, float]]:
         raise ValueError(f"k ({k}) cannot exceed len(scores) ({len(scores)})")
 
     ranked = sorted(enumerate(scores), key=lambda pair: pair[1], reverse=True)
-    return ranked[:k]
+    # Tied scores are otherwise returned in whatever order the input happened
+    # to have; settle them by index so repeated calls agree.
+    return sorted(ranked[:k])
